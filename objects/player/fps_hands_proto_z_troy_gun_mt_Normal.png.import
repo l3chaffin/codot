@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cintqul312bf5"
+path.s3tc="res://.godot/imported/fps_hands_proto_z_troy_gun_mt_Normal.png-2a487ba91cb97e0ac17be6f6a4d6e1ca.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "db23c578f80bdf16aa8cd9a77c76b28f"
+}
+
+[deps]
+
+source_file="res://objects/player/fps_hands_proto_z_troy_gun_mt_Normal.png"
+dest_files=["res://.godot/imported/fps_hands_proto_z_troy_gun_mt_Normal.png-2a487ba91cb97e0ac17be6f6a4d6e1ca.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://objects/player/fps_hands_proto_z_troy_gun_mt_Normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=true
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
