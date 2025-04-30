@@ -1,7 +1,8 @@
-[gd_scene load_steps=37 format=4 uid="uid://dk4j8n8wqup5t"]
+[gd_scene load_steps=38 format=4 uid="uid://dk4j8n8wqup5t"]
 
 [ext_resource type="Script" uid="uid://cmnsf1668omig" path="res://objects/player/player.gd" id="1_cqmt1"]
 [ext_resource type="Script" uid="uid://l3upncrmf6sg" path="res://objects/player/head.gd" id="2_g7ett"]
+[ext_resource type="Script" uid="uid://5gnnhd735v58" path="res://objects/player/sprint.gd" id="3_45rsp"]
 [ext_resource type="Texture2D" uid="uid://ccbsfxuelvk3w" path="res://objects/player/textures/hands_col.png" id="3_m4kly"]
 [ext_resource type="Script" uid="uid://d20jlg0doxo2g" path="res://objects/player/hands.gd" id="4_m4kly"]
 [ext_resource type="Texture2D" uid="uid://7t4d4plhnmxk" path="res://objects/player/textures/hands_norm.png" id="4_xgwla"]
@@ -2735,6 +2736,9 @@ fov = 65.0
 shape = SubResource("CapsuleShape3D_5lq1w")
 
 [node name="Sprint" type="Node" parent="."]
+script = ExtResource("3_45rsp")
+sprint_speed = 9
+fov_multiplier = 1.0
 
 [node name="HUD" parent="." instance=ExtResource("7_ow0dq")]
 
