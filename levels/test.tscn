@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqdvh5frhsn84"]
+[gd_scene load_steps=24 format=3 uid="uid://bqdvh5frhsn84"]
 
 [ext_resource type="Texture2D" uid="uid://cxo4ib0j471ng" path="res://art/textures/ground/Ground037_1K-PNG_Color.png" id="1_2grjb"]
 [ext_resource type="Texture2D" uid="uid://bfajwjaxm31yc" path="res://art/textures/ground/Ground037_1K-PNG_AmbientOcclusion.png" id="2_qhvcx"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b5w435t8rwspn" path="res://objects/barrel.tscn" id="8_epu3l"]
 [ext_resource type="Texture2D" uid="uid://2ehugsts4i7w" path="res://art/textures/skybox_day.jpg" id="8_eudka"]
 [ext_resource type="PackedScene" uid="uid://dk4j8n8wqup5t" path="res://objects/player/player.tscn" id="9_qhvcx"]
+[ext_resource type="LightmapGIData" uid="uid://4cuikxycn31c" path="res://levels/test.lmbake" id="11_eudka"]
 
 [sub_resource type="GDScript" id="GDScript_qhvcx"]
 script/source = "extends Node3D
@@ -128,3 +129,10 @@ physics_material_override = SubResource("PhysicsMaterial_qhvcx")
 
 [node name="Player" parent="." instance=ExtResource("9_qhvcx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.782848, 5.60557, 7.89758)
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62131, 0)
+quality = 2
+directional = true
+shadowmask_mode = 1
+light_data = ExtResource("11_eudka")
