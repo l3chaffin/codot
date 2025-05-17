@@ -70,6 +70,8 @@ glow_enabled = true
 glow_intensity = 1.0
 glow_bloom = 0.3
 glow_hdr_scale = 1.0
+fog_mode = 1
+fog_density = 1.0
 adjustment_enabled = true
 adjustment_contrast = 1.2
 

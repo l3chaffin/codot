@@ -40,8 +40,8 @@ func _process(delta: float) -> void:
 	
 	# Clamped to prevent viewmodel from flipping on Z axis
 	if gun_pos.global_rotation.x > deg_to_rad(-85) and gun_pos.global_rotation.x < deg_to_rad(85):
-		rotation.x = clamp(rotation.x - mouse_axis.y * 0.47 * delta, deg_to_rad(-90), deg_to_rad(90))
-	rotation.y = rotation.y - mouse_axis.x * 0.47 * delta
+		rotation.x = clamp(rotation.x - mouse_axis.y * 0.0022, deg_to_rad(-90), deg_to_rad(90))
+	rotation.y = rotation.y - mouse_axis.x * 0.0022
 	# Lerp to final position
 	rotation.x = lerp_angle(rotation.x, gun_pos.global_rotation.x, 7 * delta)
 	rotation.y = lerp_angle(rotation.y, gun_pos.global_rotation.y, 7 * delta)
