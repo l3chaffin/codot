@@ -30,8 +30,8 @@ func _process(delta: float) -> void:
 		global_position.y = anim_landing(global_position.y, global_position.y - 0.65, land_time)
 		cam.global_position.y = anim_landing(cam.global_position.y, cam.global_position.y - 0.5, land_time)
 		if player.cur_speed > 0.0:
-			rotation.z = sin(walk_time * 1.5) * 0.01
-			global_position.y += sin(walk_time * 1.5) * -0.012
+			#rotation.z = lerp_angle(rotation.z, rotation.z + sin(walk_time * 1.5) * 0.01, 70 * delta)
+			position.y = lerp(position.y, position.y + sin(walk_time * 1.5) * -0.012, 70 * delta)
 		else:
 			rotation.z = lerp_angle(rotation.z, gun_pos.global_rotation.z, 10 * delta)
 	else:
@@ -40,8 +40,8 @@ func _process(delta: float) -> void:
 	
 	# Clamped to prevent viewmodel from flipping on Z axis
 	if gun_pos.global_rotation.x > deg_to_rad(-85) and gun_pos.global_rotation.x < deg_to_rad(85):
-		rotation.x = clamp(rotation.x - mouse_axis.y * 0.0022, deg_to_rad(-90), deg_to_rad(90))
-	rotation.y = rotation.y - mouse_axis.x * 0.0022
+		rotation.x = clamp(rotation.x - mouse_axis.y * 0.0021, deg_to_rad(-90), deg_to_rad(90))
+	rotation.y = rotation.y - mouse_axis.x * 0.0021
 	# Lerp to final position
 	rotation.x = lerp_angle(rotation.x, gun_pos.global_rotation.x, 7 * delta)
 	rotation.y = lerp_angle(rotation.y, gun_pos.global_rotation.y, 7 * delta)
