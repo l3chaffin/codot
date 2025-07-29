@@ -39,17 +39,22 @@ func _process(delta: float) -> void:
 		rotation.z = lerp_angle(rotation.z, gun_pos.global_rotation.z, 10 * delta)
 	
 	# Clamped to prevent viewmodel from flipping on Z axis
-	if gun_pos.global_rotation.x > deg_to_rad(-85) and gun_pos.global_rotation.x < deg_to_rad(85):
-		rotation.x = clamp(rotation.x - mouse_axis.y * 0.0021, deg_to_rad(-90), deg_to_rad(90))
-	rotation.y = rotation.y - mouse_axis.x * 0.0021
+	#if gun_pos.global_rotation.x > deg_to_rad(-85) and gun_pos.global_rotation.x < deg_to_rad(85):
+		#rotation.x = clamp(rotation.x - mouse_axis.y * 0.0021, deg_to_rad(-90), deg_to_rad(90))
+		
+	rotate_object_local(Vector3.RIGHT, -mouse_axis.y * 0.01)
+	#rotation.y = rotation.y - mouse_axis.x * 0.0021
+	rotate_object_local(Vector3.UP, -mouse_axis.x * 0.01)
 	# Lerp to final position
-	rotation.x = lerp_angle(rotation.x, gun_pos.global_rotation.x, 7 * delta)
-	rotation.y = lerp_angle(rotation.y, gun_pos.global_rotation.y, 7 * delta)
+	#rotate_object_local(Vector3.UP, 0.0)
+	transform.basis = gun_pos.basis
+	#rotation.x = lerp_angle(rotation.x, gun_pos.global_rotation.x, 7 * delta)
+	#rotation.y = lerp_angle(rotation.y, gun_pos.global_rotation.y, 7 * delta)
 	#rotation.z = gun_pos.global_rotation.z
-	
 	
 	# Declare mouse is no longer moving at the end of the frame
 	mouse_axis = Vector2.ZERO
+	transform = transform.orthonormalized()
 
 
 func anim_landing(p0: float, p1: float, t: float):
